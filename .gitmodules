@@ -4,3 +4,6 @@
 [submodule "bespoke.js"]
 	path = bespoke.js
 	url = git@github.com:markdalgleish/bespoke.js.git
+[submodule "x-markdown"]
+	path = x-markdown
+	url = git@github.com:ryanseddon/markdown-component.git
