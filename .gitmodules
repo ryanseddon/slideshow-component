@@ -1,0 +1,6 @@
+[submodule "polymer"]
+	path = polymer
+	url = git@github.com:Polymer/polymer.git
+[submodule "bespoke.js"]
+	path = bespoke.js
+	url = git@github.com:markdalgleish/bespoke.js.git
