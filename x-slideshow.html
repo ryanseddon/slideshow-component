@@ -1,50 +1,46 @@
-<script src="bespoke.js/dist/bespoke.min.js"></script>
+<script src="components/bespoke.js/dist/bespoke.min.js"></script>
+<script src="components/bespoke-hash/dist/bespoke-hash.min.js"></script>
+<script src="components/bespoke-bullets/dist/bespoke-bullets.min.js"></script>
+<script src="components/bespoke-state/dist/bespoke-state.min.js"></script>
 <link rel="import" href="x-slide.html" />
 <element name="x-slideshow">
   <template>
     <style>
+      .x-slideshow__controls {
+        position: absolute;
+        z-index: 1;
+        width: 100px;
+        bottom: 20px;
+        right: 20px;
+        text-align: justify;
+      }
+      .x-slideshow__controls:after {
+        content: "";
+        display: inline-block;
+        width: 100%;
+      }
       .x-slideshow__control {
-        width: 10%;
-        font-size: 60px;
-        line-height: 50px;
-        text-align: left;
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        cursor: pointer;
-        vertical-align: middle;
+        font-size: 30px;
+        line-height: 1;
+        display: inline-block;
         color: #eee;
-      }
-      .x-slideshow__controls__next {
-        left: auto;
-        right: 0;
-      }
-      .x-slideshow__control:after {
-        content: "\21dc";
-        position: absolute;
-        top: 50%;
-        right: 1.5rem;
-        text-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
-        -webkit-transform: translate3d(0, -50%, 0);
-        transform: translate3d(0, -50%, 0)
-      }
-      .x-slideshow__controls__next:after {
-        content: "\21dd";
-        right: auto;
-        left: 1.5rem
+        cursor: pointer;
       }
     </style>
     <content></content>
     <div class="x-slideshow__controls">
-      <span on-click="prevSlide" class="x-slideshow__control x-slideshow__controls__prev"></span>
-      <span on-click="nextSlide" class="x-slideshow__control x-slideshow__controls__next"></span>
+      <span on-click="prevSlide" class="x-slideshow__control">&#9664;</span>
+      <span on-click="nextSlide" class="x-slideshow__control">&#9654;</span>
     </div>
   </template>
   <script>
     Polymer.register(this, {
       ready: function() {
-        bespoke.horizontal.from('x-slideshow');
+        bespoke.horizontal.from('x-slideshow', {
+          hash: true,
+          state: true,
+          bullets: true
+        });
       },
       prevSlide: function(event) {
         bespoke.prev();
