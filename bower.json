@@ -1,0 +1,16 @@
+{
+  "name": "slideshow-component",
+  "version": "0.1.0",
+  "main": "x-slideshow.html",
+  "dependencies": {
+    "bespoke-bullets": "~0.2.0",
+    "bespoke-hash": "~0.1.1",
+    "bespoke-state": "~0.2.1",
+    "bespoke.js": "~0.2.2"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ]
+}
